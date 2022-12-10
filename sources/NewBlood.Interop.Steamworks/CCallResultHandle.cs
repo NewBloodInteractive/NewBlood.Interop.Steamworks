@@ -62,6 +62,11 @@ public unsafe abstract class CCallResultHandle : IDisposable
     {
         ThrowIfDisposed();
         _handle->Cancel();
+
+        if (_gcHandle.IsAllocated)
+        {
+            _gcHandle.Target = null;
+        }
     }
 
     public int GetICallback()

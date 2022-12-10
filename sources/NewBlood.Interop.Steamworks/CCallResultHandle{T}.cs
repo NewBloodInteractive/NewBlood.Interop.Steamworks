@@ -23,6 +23,19 @@ public unsafe sealed class CCallResultHandle<T> : CCallResultHandle
     {
     }
 
+    public void Set(SteamAPICall_t hAPICall, void* pObj, delegate* unmanaged[Cdecl]<void*, void*, byte, void> func)
+    {
+        ThrowIfDisposed();
+
+        if (_gcHandle.IsAllocated)
+            _gcHandle.Target = this;
+        else
+            _gcHandle = GCHandle.Alloc(this);
+
+        _handle->Set(hAPICall, pObj, func);
+        _delegate = null;
+    }
+
     public void Set(SteamAPICall_t hAPICall, CCallResultDelegate<T> func)
     {
         ThrowIfDisposed();

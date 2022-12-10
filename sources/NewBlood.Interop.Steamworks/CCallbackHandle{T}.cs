@@ -24,6 +24,12 @@ public unsafe sealed class CCallbackHandle<T> : CCallbackHandle
         Register(func);
     }
 
+    public CCallbackHandle(void* pObj, delegate* unmanaged[Cdecl]<void*, void*, void> func, bool bGameserver)
+        : this(bGameserver)
+    {
+        Register(pObj, func);
+    }
+
     public CCallbackHandle()
         : this(bGameserver: false)
     {
@@ -33,6 +39,25 @@ public unsafe sealed class CCallbackHandle<T> : CCallbackHandle
         : this(func, bGameserver: false)
     {
         Register(func);
+    }
+
+    public CCallbackHandle(void* pObj, delegate* unmanaged[Cdecl]<void*, void*, void> func)
+        : this(bGameserver: false)
+    {
+        Register(pObj, func);
+    }
+
+    public void Register(void* pObj, delegate* unmanaged[Cdecl]<void*, void*, void> func)
+    {
+        ThrowIfDisposed();
+
+        if (_gcHandle.IsAllocated)
+            _gcHandle.Target = this;
+        else
+            _gcHandle = GCHandle.Alloc(this);
+
+        _handle->Register(pObj, func, SteamInteropHelpers.GetCallbackId<T>());
+        _delegate = null;
     }
 
     public void Register(CCallbackDelegate<T> func)
@@ -55,7 +80,7 @@ public unsafe sealed class CCallbackHandle<T> : CCallbackHandle
 
         if (_gcHandle.IsAllocated)
         {
-            _gcHandle.Free();
+            _gcHandle.Target = null;
         }
     }
 
