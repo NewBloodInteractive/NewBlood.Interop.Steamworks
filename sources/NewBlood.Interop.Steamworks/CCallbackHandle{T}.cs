@@ -68,7 +68,7 @@ public unsafe sealed class CCallbackHandle<T> : CCallbackHandle
 
         if (_gcHandle.IsAllocated)
         {
-            _gcHandle.Free();
+            _gcHandle.Target = null;
         }
     }
 
