@@ -24,6 +24,12 @@ public unsafe sealed class CCallbackHandle<T> : CCallbackHandle
         Register(func);
     }
 
+    public CCallbackHandle(void* pObj, delegate* unmanaged[Cdecl]<void*, void*, void> func, bool bGameserver)
+        : this(bGameserver)
+    {
+        Register(pObj, func);
+    }
+
     public CCallbackHandle()
         : this(bGameserver: false)
     {
@@ -33,6 +39,12 @@ public unsafe sealed class CCallbackHandle<T> : CCallbackHandle
         : this(func, bGameserver: false)
     {
         Register(func);
+    }
+
+    public CCallbackHandle(void* pObj, delegate* unmanaged[Cdecl]<void*, void*, void> func)
+        : this(bGameserver: false)
+    {
+        Register(pObj, func);
     }
 
     public void Register(void* pObj, delegate* unmanaged[Cdecl]<void*, void*, void> func)
