@@ -65,7 +65,7 @@ public unsafe abstract class CCallResultHandle : IDisposable
 
         if (_gcHandle.IsAllocated)
         {
-            _gcHandle.Target = null;
+            _gcHandle.Free();
         }
     }
 
