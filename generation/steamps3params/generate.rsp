@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steamps3params.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamps3params
+--traverse
+../../sdk/public/steam/steamps3params.h

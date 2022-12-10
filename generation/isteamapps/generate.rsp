@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamApps
+--file
+isteamapps.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamapps
+--traverse
+../../sdk/public/steam/isteamapps.h

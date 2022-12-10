@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steamtypes.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamtypes
+--traverse
+../../sdk/public/steam/steamtypes.h

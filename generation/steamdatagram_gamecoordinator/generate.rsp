@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steamdatagram_gamecoordinator.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamdatagram_gamecoordinator
+--traverse
+../../sdk/include/steam/steamdatagram_gamecoordinator.h

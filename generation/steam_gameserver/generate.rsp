@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steam_gameserver.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steam_gameserver
+--traverse
+../../sdk/public/steam/steam_gameserver.h

@@ -1,0 +1,11 @@
+@../base.rsp
+--exclude
+ISteamController
+--file
+isteamcontroller.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamcontroller
+--traverse
+../../sdk/public/steam/isteamcontroller.h
+--with-attribute
+ESteamControllerLEDFlag=Flags

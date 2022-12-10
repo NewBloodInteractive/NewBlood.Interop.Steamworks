@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamGameCoordinator
+--file
+isteamgamecoordinator.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamgamecoordinator
+--traverse
+../../sdk/public/steam/isteamgamecoordinator.h

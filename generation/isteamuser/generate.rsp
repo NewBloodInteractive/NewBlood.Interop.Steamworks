@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamUser
+--file
+isteamuser.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamuser
+--traverse
+../../sdk/public/steam/isteamuser.h

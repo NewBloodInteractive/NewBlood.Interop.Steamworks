@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamClient
+--file
+isteamclient.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamclient
+--traverse
+../../sdk/public/steam/isteamclient.h

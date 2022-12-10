@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamMusic
+--file
+isteammusic.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteammusic
+--traverse
+../../sdk/public/steam/isteammusic.h

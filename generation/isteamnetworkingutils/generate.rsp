@@ -1,0 +1,10 @@
+@../base.rsp
+--exclude
+ISteamNetworkingUtils
+SteamDatagramRelayAuthTicket
+--file
+isteamnetworkingutils.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamnetworkingutils
+--traverse
+../../sdk/public/steam/isteamnetworkingutils.h

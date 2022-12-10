@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamAppList
+--file
+isteamapplist.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamapplist
+--traverse
+../../sdk/public/steam/isteamapplist.h

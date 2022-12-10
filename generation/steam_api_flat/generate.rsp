@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steam_api_flat.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steam_api_flat
+--traverse
+../../sdk/public/steam/steam_api_flat.h

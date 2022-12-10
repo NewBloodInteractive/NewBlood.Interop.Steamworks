@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamGameServerStats
+--file
+isteamgameserverstats.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamgameserverstats
+--traverse
+../../sdk/public/steam/isteamgameserverstats.h

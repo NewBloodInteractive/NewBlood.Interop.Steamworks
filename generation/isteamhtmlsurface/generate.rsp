@@ -1,0 +1,11 @@
+@../base.rsp
+--exclude
+ISteamHTMLSurface
+--file
+isteamhtmlsurface.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamhtmlsurface
+--traverse
+../../sdk/public/steam/isteamhtmlsurface.h
+--with-attribute
+EHTMLKeyModifiers=Flags

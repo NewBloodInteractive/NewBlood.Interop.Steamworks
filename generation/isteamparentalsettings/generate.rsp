@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamParentalSettings
+--file
+isteamparentalsettings.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamparentalsettings
+--traverse
+../../sdk/public/steam/isteamparentalsettings.h

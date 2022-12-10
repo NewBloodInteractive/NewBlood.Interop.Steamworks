@@ -1,0 +1,14 @@
+@../base.rsp
+--exclude
+CSteamAPIContext
+CSteamGameServerAPIContext
+ISteamContentServer
+ISteamGameServer
+ISteamGameServerStats
+ISteamPS3OverlayRender
+--file
+steam_api_internal.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steam_api_internal
+--traverse
+../../sdk/public/steam/steam_api_internal.h

@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+isteamdualsense.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamdualsense
+--traverse
+../../sdk/public/steam/isteamdualsense.h

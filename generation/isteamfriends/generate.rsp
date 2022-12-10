@@ -1,0 +1,13 @@
+@../base.rsp
+--exclude
+ISteamFriends
+--file
+isteamfriends.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamfriends
+--traverse
+../../sdk/public/steam/isteamfriends.h
+--with-attribute
+EFriendFlags=Flags
+EPersonaChange=Flags
+EUserRestriction=Flags

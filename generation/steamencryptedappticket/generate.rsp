@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steamencryptedappticket.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamencryptedappticket
+--traverse
+../../sdk/public/steam/steamencryptedappticket.h

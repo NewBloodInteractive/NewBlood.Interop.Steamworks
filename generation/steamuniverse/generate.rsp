@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steamuniverse.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamuniverse
+--traverse
+../../sdk/public/steam/steamuniverse.h

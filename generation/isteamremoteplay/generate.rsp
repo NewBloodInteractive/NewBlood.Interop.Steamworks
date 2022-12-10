@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamRemotePlay
+--file
+isteamremoteplay.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamremoteplay
+--traverse
+../../sdk/public/steam/isteamremoteplay.h

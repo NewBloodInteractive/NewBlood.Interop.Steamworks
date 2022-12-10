@@ -1,0 +1,25 @@
+--additional
+-m64
+-Wno-deprecated-declarations
+--config
+exclude-enum-operators
+exclude-funcs-with-body
+generate-file-scoped-namespaces
+multi-file
+preview-codegen
+--define-macro
+API_GEN
+DLL_IMPORT=extern "C" __declspec(dllimport)
+STEAM_API_EXPORTS
+VERSION_SAFE_STEAM_API_INTERFACES
+--include-directory
+../../sdk/public
+../../sdk/public/steam
+../../sdk/include
+../../sdk/include/steam
+--methodClassName
+Steamworks
+--namespace
+NewBlood.Interop.Steamworks
+--with-callconv
+*=Cdecl

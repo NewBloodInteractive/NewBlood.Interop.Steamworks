@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamHTTP
+--file
+isteamhttp.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamhttp
+--traverse
+../../sdk/public/steam/isteamhttp.h

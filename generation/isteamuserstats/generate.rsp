@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamUserStats
+--file
+isteamuserstats.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamuserstats
+--traverse
+../../sdk/public/steam/isteamuserstats.h

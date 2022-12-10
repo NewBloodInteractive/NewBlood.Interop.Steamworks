@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamUtils
+--file
+isteamutils.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamutils
+--traverse
+../../sdk/public/steam/isteamutils.h

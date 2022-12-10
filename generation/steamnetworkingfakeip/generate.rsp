@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamNetworkingFakeUDPPort
+--file
+steamnetworkingfakeip.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamnetworkingfakeip
+--traverse
+../../sdk/public/steam/steamnetworkingfakeip.h

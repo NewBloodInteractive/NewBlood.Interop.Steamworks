@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamMusicRemote
+--file
+isteammusicremote.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteammusicremote
+--traverse
+../../sdk/public/steam/isteammusicremote.h

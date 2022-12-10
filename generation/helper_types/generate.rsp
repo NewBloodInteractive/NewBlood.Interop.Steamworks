@@ -1,0 +1,7 @@
+@../base.rsp
+--config
+generate-helper-types
+--file
+helper_types.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/helper_types

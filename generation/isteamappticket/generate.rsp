@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamAppTicket
+--file
+isteamappticket.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamappticket
+--traverse
+../../sdk/public/steam/isteamappticket.h

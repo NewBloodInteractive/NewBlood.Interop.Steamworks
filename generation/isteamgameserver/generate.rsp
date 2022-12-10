@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamGameServer
+--file
+isteamgameserver.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamgameserver
+--traverse
+../../sdk/public/steam/isteamgameserver.h

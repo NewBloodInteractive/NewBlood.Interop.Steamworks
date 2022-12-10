@@ -1,0 +1,10 @@
+@../base.rsp
+--exclude
+ISteamPS3OverlayRender
+ISteamPS3OverlayRenderHost
+--file
+isteamps3overlayrenderer.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamps3overlayrenderer
+--traverse
+../../sdk/public/steam/isteamps3overlayrenderer.h

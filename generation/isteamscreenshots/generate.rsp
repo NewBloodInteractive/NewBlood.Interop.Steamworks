@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamScreenshots
+--file
+isteamscreenshots.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamscreenshots
+--traverse
+../../sdk/public/steam/isteamscreenshots.h

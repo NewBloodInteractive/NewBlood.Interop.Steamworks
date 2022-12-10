@@ -1,0 +1,4 @@
+--with-namespace
+EHTMLKeyModifiers=static NewBlood.Interop.Steamworks.ISteamHTMLSurface
+EHTMLMouseButton=static NewBlood.Interop.Steamworks.ISteamHTMLSurface
+EMouseCursor=static NewBlood.Interop.Steamworks.ISteamHTMLSurface

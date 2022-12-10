@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+CCallbackBase
+--file
+steam_api_common.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steam_api_common
+--traverse
+../../sdk/public/steam/steam_api_common.h

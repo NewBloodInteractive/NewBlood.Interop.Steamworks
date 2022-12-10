@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+matchmakingtypes.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/matchmakingtypes
+--traverse
+../../sdk/public/steam/matchmakingtypes.h

@@ -1,0 +1,12 @@
+@../base.rsp
+--exclude
+ISteamInventory
+k_SteamItemInstanceIDInvalid
+--file
+isteaminventory.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteaminventory
+--traverse
+../../sdk/public/steam/isteaminventory.h
+--with-attribute
+ESteamItemFlags=Flags

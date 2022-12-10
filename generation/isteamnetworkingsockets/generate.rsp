@@ -1,0 +1,13 @@
+@../base.rsp
+--exclude
+ISteamNetworkingConnectionSignaling
+ISteamNetworkingFakeUDPPort
+ISteamNetworkingSignalingRecvContext
+ISteamNetworkingSockets
+SteamNetworkingFakeIPResult_t
+--file
+isteamnetworkingsockets.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamnetworkingsockets
+--traverse
+../../sdk/public/steam/isteamnetworkingsockets.h

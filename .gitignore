@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+.vscode/
+
+# Build artifacts
+bin/
+obj/
+
+# Steamworks SDK
+/sdk/*
+
+# Binaries
+/dist/**/*.dll
+/dist/**/*.dylib
+/dist/**/*.so
+
+# Preserve .gitkeep
+!.gitkeep

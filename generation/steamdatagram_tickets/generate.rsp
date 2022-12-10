@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steamdatagram_tickets.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamdatagram_tickets
+--traverse
+../../sdk/include/steam/steamdatagram_tickets.h

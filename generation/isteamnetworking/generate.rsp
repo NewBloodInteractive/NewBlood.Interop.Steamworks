@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamNetworking
+--file
+isteamnetworking.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamnetworking
+--traverse
+../../sdk/public/steam/isteamnetworking.h

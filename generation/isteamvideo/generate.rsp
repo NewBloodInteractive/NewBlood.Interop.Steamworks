@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamVideo
+--file
+isteamvideo.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamvideo
+--traverse
+../../sdk/public/steam/isteamvideo.h

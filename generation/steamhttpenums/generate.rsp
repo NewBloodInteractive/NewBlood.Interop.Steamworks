@@ -1,0 +1,7 @@
+@../base.rsp
+--file
+steamhttpenums.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamhttpenums
+--traverse
+../../sdk/public/steam/steamhttpenums.h

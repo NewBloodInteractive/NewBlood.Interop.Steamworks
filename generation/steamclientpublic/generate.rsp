@@ -1,0 +1,14 @@
+@../base.rsp
+--exclude
+CGameID
+CSteamID
+EChatSteamIDInstanceFlags
+--file
+steamclientpublic.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/steamclientpublic
+--traverse
+../../sdk/public/steam/steamclientpublic.h
+--with-attribute
+EChatSteamIDInstanceFlags=Flags
+EMarketNotAllowedReasonFlags=Flags

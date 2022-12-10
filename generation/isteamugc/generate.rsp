@@ -1,0 +1,11 @@
+@../base.rsp
+--exclude
+ISteamUGC
+--file
+isteamugc.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamugc
+--traverse
+../../sdk/public/steam/isteamugc.h
+--with-attribute
+EItemState=Flags
