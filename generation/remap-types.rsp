@@ -1,4 +1,3 @@
 --remap
-HServerListRequest=HServerListRequest
 uint64_gameid=CGameID
 uint64_steamid=CSteamID

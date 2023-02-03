@@ -11,6 +11,7 @@ DepotId_t=uint;Typedef
 FriendsGroupID_t=short;Typedef
 HAuthTicket=uint;Typedef
 HHTMLBrowser=uint;Typedef
+HServerListRequest=void*;Handle
 HServerQuery=int;Typedef
 HSteamListenSocket=uint;Typedef
 HSteamNetConnection=uint;Typedef
