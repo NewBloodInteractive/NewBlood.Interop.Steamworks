@@ -71,7 +71,7 @@ public readonly unsafe partial struct HServerListRequest : IComparable, ICompara
 
     public int CompareTo(object? obj)
     {
-        if (obj is HServerListRequest other)
+            if (obj is HServerListRequest other)
         {
             return CompareTo(other);
         }
@@ -79,33 +79,15 @@ public readonly unsafe partial struct HServerListRequest : IComparable, ICompara
         return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HServerListRequest.");
     }
 
-    public int CompareTo(HServerListRequest other)
-    {
-        if (sizeof(nint) == 4)
-            return ((uint)Value).CompareTo((uint)other.Value);
-        else
-            return ((ulong)Value).CompareTo((ulong)other.Value);
-    }
+    public int CompareTo(HServerListRequest other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
     public override bool Equals(object? obj) => (obj is HServerListRequest other) && Equals(other);
 
-    public bool Equals(HServerListRequest other) => ((nuint)Value) == ((nuint)other.Value);
+    public bool Equals(HServerListRequest other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-    public override int GetHashCode() => ((nuint)Value).GetHashCode();
+    public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-    public override string ToString()
-    {
-        if (sizeof(nint) == 4)
-            return ((uint)Value).ToString("X8");
-        else
-            return ((ulong)Value).ToString("X16");
-    }
+    public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-    public string ToString(string? format, IFormatProvider? formatProvider)
-    {
-        if (sizeof(nint) == 4)
-            return ((uint)Value).ToString(format, formatProvider);
-        else
-            return ((ulong)Value).ToString(format, formatProvider);
-    }
+    public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
 }
