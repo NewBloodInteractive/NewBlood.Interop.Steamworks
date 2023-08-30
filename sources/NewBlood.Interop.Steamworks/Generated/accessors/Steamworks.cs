@@ -2,9 +2,9 @@ namespace NewBlood.Interop.Steamworks;
 
 public static unsafe partial class Steamworks
 {
-    public static ISteamUser* SteamUser() => SteamAPI_SteamUser_v021();
+    public static ISteamUser* SteamUser() => SteamAPI_SteamUser_v023();
 
-    public static ISteamUser* SteamAPI_SteamUser() => SteamAPI_SteamUser_v021();
+    public static ISteamUser* SteamAPI_SteamUser() => SteamAPI_SteamUser_v023();
 
     public static ISteamFriends* SteamFriends() => SteamAPI_SteamFriends_v017();
 
@@ -82,13 +82,13 @@ public static unsafe partial class Steamworks
 
     public static ISteamController* SteamAPI_SteamController() => SteamAPI_SteamController_v008();
 
-    public static ISteamUGC* SteamUGC() => SteamAPI_SteamUGC_v016();
+    public static ISteamUGC* SteamUGC() => SteamAPI_SteamUGC_v017();
 
-    public static ISteamUGC* SteamAPI_SteamUGC() => SteamAPI_SteamUGC_v016();
+    public static ISteamUGC* SteamAPI_SteamUGC() => SteamAPI_SteamUGC_v017();
 
-    public static ISteamUGC* SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v016();
+    public static ISteamUGC* SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v017();
 
-    public static ISteamUGC* SteamAPI_SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v016();
+    public static ISteamUGC* SteamAPI_SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v017();
 
     public static ISteamAppList* SteamAppList() => SteamAPI_SteamAppList_v001();
 
@@ -138,9 +138,9 @@ public static unsafe partial class Steamworks
 
     public static ISteamNetworkingUtils* SteamAPI_SteamNetworkingUtils_SteamAPI() => SteamAPI_SteamNetworkingUtils_SteamAPI_v004();
 
-    public static ISteamGameServer* SteamGameServer() => SteamAPI_SteamGameServer_v014();
+    public static ISteamGameServer* SteamGameServer() => SteamAPI_SteamGameServer_v015();
 
-    public static ISteamGameServer* SteamAPI_SteamGameServer() => SteamAPI_SteamGameServer_v014();
+    public static ISteamGameServer* SteamAPI_SteamGameServer() => SteamAPI_SteamGameServer_v015();
 
     public static ISteamGameServerStats* SteamGameServerStats() => SteamAPI_SteamGameServerStats_v001();
 

@@ -19,6 +19,7 @@ public enum EHTTPStatusCode
     k_EHTTPStatusCode304NotModified = 304,
     k_EHTTPStatusCode305UseProxy = 305,
     k_EHTTPStatusCode307TemporaryRedirect = 307,
+    k_EHTTPStatusCode308PermanentRedirect = 308,
     k_EHTTPStatusCode400BadRequest = 400,
     k_EHTTPStatusCode401Unauthorized = 401,
     k_EHTTPStatusCode402PaymentRequired = 402,

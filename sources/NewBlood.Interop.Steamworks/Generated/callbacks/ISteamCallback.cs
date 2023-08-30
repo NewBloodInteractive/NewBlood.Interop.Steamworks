@@ -216,6 +216,14 @@ public partial struct FileDetailsResult_t : ISteamCallback
     int ISteamCallback.CallbackId => k_iCallback;
 }
 
+public partial struct FilterTextDictionaryChanged_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
 public partial struct FloatingGamepadTextInputDismissed_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER
@@ -353,6 +361,14 @@ public partial struct GetAuthSessionTicketResponse_t : ISteamCallback
 }
 
 public partial struct GetOPFSettingsResult_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
+public partial struct GetTicketForWebApiResponse_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER
     static
@@ -1048,14 +1064,6 @@ public partial struct PSNGameBootInviteResult_t : ISteamCallback
     int ISteamCallback.CallbackId => k_iCallback;
 }
 
-public partial struct RegisterActivationCodeResponse_t : ISteamCallback
-{
-#if NET6_0_OR_GREATER
-    static
-#endif
-    int ISteamCallback.CallbackId => k_iCallback;
-}
-
 public partial struct RemoteStorageDeletePublishedFileResult_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER
@@ -1416,6 +1424,14 @@ public partial struct SteamInputDeviceDisconnected_t : ISteamCallback
     int ISteamCallback.CallbackId => k_iCallback;
 }
 
+public partial struct SteamInputGamepadSlotChange_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
 public partial struct SteamInventoryDefinitionUpdate_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER
@@ -1529,6 +1545,14 @@ public partial struct SteamRemotePlaySessionConnected_t : ISteamCallback
 }
 
 public partial struct SteamRemotePlaySessionDisconnected_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
+public partial struct SteamRemotePlayTogetherGuestInvite_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER
     static

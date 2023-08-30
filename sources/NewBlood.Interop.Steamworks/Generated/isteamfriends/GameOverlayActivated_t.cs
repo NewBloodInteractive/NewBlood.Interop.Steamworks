@@ -9,5 +9,10 @@ public partial struct GameOverlayActivated_t
     [NativeTypeName("uint8")]
     public byte m_bActive;
 
+    [NativeTypeName("bool")]
+    public byte m_bUserInitiated;
+
+    public AppId_t m_nAppID;
+
     public const int k_iCallback = k_iSteamFriendsCallbacks + 31;
 }

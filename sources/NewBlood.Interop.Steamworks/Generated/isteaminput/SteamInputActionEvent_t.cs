@@ -10,7 +10,7 @@ public partial struct SteamInputActionEvent_t
 
     public ESteamInputActionEventType eEventType;
 
-    [NativeTypeName("SteamInputActionEvent_t::(anonymous union at ../../sdk/public/steam/isteaminput.h:679:2)")]
+    [NativeTypeName("__AnonymousRecord_isteaminput_L731_C2")]
     public _Anonymous_e__Union Anonymous;
 
     [UnscopedRef]
