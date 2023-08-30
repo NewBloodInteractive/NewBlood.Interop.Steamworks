@@ -12,4 +12,5 @@ public enum EAuthSessionResponse
     k_EAuthSessionResponseAuthTicketInvalidAlreadyUsed = 7,
     k_EAuthSessionResponseAuthTicketInvalid = 8,
     k_EAuthSessionResponsePublisherIssuedBan = 9,
+    k_EAuthSessionResponseAuthTicketNetworkIdentityFailure = 10,
 }

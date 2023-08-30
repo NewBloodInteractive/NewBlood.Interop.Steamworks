@@ -154,7 +154,7 @@ public static unsafe partial class Steamworks
     public static extern ISteamRemotePlay* SteamAPI_ISteamClient_GetISteamRemotePlay(ISteamClient* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, [NativeTypeName("const char *")] sbyte* pchVersion);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUser* SteamAPI_SteamUser_v021();
+    public static extern ISteamUser* SteamAPI_SteamUser_v023();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetHSteamUser")]
@@ -216,7 +216,11 @@ public static unsafe partial class Steamworks
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetAuthSessionTicket")]
-    public static extern HAuthTicket SteamAPI_ISteamUser_GetAuthSessionTicket(ISteamUser* self, void* pTicket, int cbMaxTicket, [NativeTypeName("uint32 *")] uint* pcbTicket);
+    public static extern HAuthTicket SteamAPI_ISteamUser_GetAuthSessionTicket(ISteamUser* self, void* pTicket, int cbMaxTicket, [NativeTypeName("uint32 *")] uint* pcbTicket, [NativeTypeName("const SteamNetworkingIdentity *")] SteamNetworkingIdentity* pSteamNetworkingIdentity);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("GetAuthTicketForWebApi")]
+    public static extern HAuthTicket SteamAPI_ISteamUser_GetAuthTicketForWebApi(ISteamUser* self, [NativeTypeName("const char *")] sbyte* pchIdentity);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("BeginAuthSession")]
@@ -2715,10 +2719,10 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamController_GetControllerBindingRevision(ISteamController* self, ControllerHandle_t controllerHandle, int* pMajor, int* pMinor);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUGC* SteamAPI_SteamUGC_v016();
+    public static extern ISteamUGC* SteamAPI_SteamUGC_v017();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUGC* SteamAPI_SteamGameServerUGC_v016();
+    public static extern ISteamUGC* SteamAPI_SteamGameServerUGC_v017();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("CreateQueryUserUGCRequest")]
@@ -2804,6 +2808,11 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("GetQueryUGCKeyValueTag")]
     public static extern byte SteamAPI_ISteamUGC_GetQueryFirstUGCKeyValueTag(ISteamUGC* self, UGCQueryHandle_t handle, [NativeTypeName("uint32")] uint index, [NativeTypeName("const char *")] sbyte* pchKey, [NativeTypeName("char *")] sbyte* pchValue, [NativeTypeName("uint32")] uint cchValueSize);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("uint32")]
+    [GenerateMemberFunction("GetQueryUGCContentDescriptors")]
+    public static extern uint SteamAPI_ISteamUGC_GetQueryUGCContentDescriptors(ISteamUGC* self, UGCQueryHandle_t handle, [NativeTypeName("uint32")] uint index, EUGCContentDescriptorID* pvecDescriptors, [NativeTypeName("uint32")] uint cMaxEntries);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
@@ -3006,6 +3015,16 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("RemoveItemPreview")]
     public static extern byte SteamAPI_ISteamUGC_RemoveItemPreview(ISteamUGC* self, UGCUpdateHandle_t handle, [NativeTypeName("uint32")] uint index);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("AddContentDescriptor")]
+    public static extern byte SteamAPI_ISteamUGC_AddContentDescriptor(ISteamUGC* self, UGCUpdateHandle_t handle, EUGCContentDescriptorID descid);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("RemoveContentDescriptor")]
+    public static extern byte SteamAPI_ISteamUGC_RemoveContentDescriptor(ISteamUGC* self, UGCUpdateHandle_t handle, EUGCContentDescriptorID descid);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("SubmitItemUpdate")]
@@ -4016,7 +4035,7 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamNetworkingUtils_SteamNetworkingIdentity_ParseString(ISteamNetworkingUtils* self, SteamNetworkingIdentity* pIdentity, [NativeTypeName("const char *")] sbyte* pszStr);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamGameServer* SteamAPI_SteamGameServer_v014();
+    public static extern ISteamGameServer* SteamAPI_SteamGameServer_v015();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("SetProduct")]
@@ -4120,7 +4139,7 @@ public static unsafe partial class Steamworks
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetAuthSessionTicket")]
-    public static extern HAuthTicket SteamAPI_ISteamGameServer_GetAuthSessionTicket(ISteamGameServer* self, void* pTicket, int cbMaxTicket, [NativeTypeName("uint32 *")] uint* pcbTicket);
+    public static extern HAuthTicket SteamAPI_ISteamGameServer_GetAuthSessionTicket(ISteamGameServer* self, void* pTicket, int cbMaxTicket, [NativeTypeName("uint32 *")] uint* pcbTicket, [NativeTypeName("const SteamNetworkingIdentity *")] SteamNetworkingIdentity* pSnid);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("BeginAuthSession")]

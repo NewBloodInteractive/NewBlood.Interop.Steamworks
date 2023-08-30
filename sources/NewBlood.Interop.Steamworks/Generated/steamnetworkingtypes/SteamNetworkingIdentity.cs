@@ -11,7 +11,7 @@ public unsafe partial struct SteamNetworkingIdentity
 
     public int m_cbSize;
 
-    [NativeTypeName("SteamNetworkingIdentity::(anonymous union at ../../sdk/public/steam/steamnetworkingtypes.h:339:2)")]
+    [NativeTypeName("__AnonymousRecord_steamnetworkingtypes_L339_C2")]
     public _Anonymous_e__Union Anonymous;
 
     [UnscopedRef]
