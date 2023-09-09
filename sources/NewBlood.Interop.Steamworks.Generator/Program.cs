@@ -1,10 +1,8 @@
 using System.CommandLine;
 using System.CommandLine.Invocation;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IMAGE;
+using AsmResolver.PE;
 
 namespace NewBlood.Interop.Steamworks.Generator;
 
@@ -246,7 +244,7 @@ internal static class Program
         }
     }
 
-    private static unsafe void GenerateLibraryPaths(InvocationContext context)
+    private static void GenerateLibraryPaths(InvocationContext context)
     {
         var sdkPath = context.ParseResult.GetValueForOption(s_SdkPathOption)!;
         var outPath = context.ParseResult.GetValueForOption(s_OutPathOption)!;
@@ -278,23 +276,17 @@ internal static class Program
             if (!File.Exists(dllPath))
                 continue;
 
-            fixed (byte* image = File.ReadAllBytes(dllPath))
+            var image = PEImage.FromFile(dllPath);
+
+            if (image.Exports is null)
+                continue;
+            
+            foreach (var export in image.Exports.Entries)
             {
-                var dosHeader = (IMAGE_DOS_HEADER*)image;
-                var ntHeader  = (IMAGE_NT_HEADERS64*)(image + dosHeader->e_lfanew);
-                var header    = ntHeader->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress;
-                var exports   = (IMAGE_EXPORT_DIRECTORY*)ResolveVirtualAddress(image, header);
-                var nameAddrs = (uint*)ResolveVirtualAddress(image, exports->AddressOfNames);
+                if (!export.IsByName)
+                    continue;
 
-                for (uint i = 0; i < exports->NumberOfNames; i++)
-                {
-                    var export = Marshal.PtrToStringAnsi((nint)ResolveVirtualAddress(image, nameAddrs[i]));
-
-                    if (export is null)
-                        continue;
-
-                    entries[export] = dllName;
-                }
+                entries[export.Name] = dllName;
             }
         }
 
@@ -307,22 +299,6 @@ internal static class Program
 
             sw.WriteLine();
             sw.Write($"{key}={entry.Value}");
-        }
-
-        static byte* ResolveVirtualAddress(byte* image, uint rva)
-        {
-            var ntHeader = (IMAGE_NT_HEADERS64*)(image + ((IMAGE_DOS_HEADER*)image)->e_lfanew);
-            var section  = (IMAGE_SECTION_HEADER*)((byte*)&ntHeader->OptionalHeader + ntHeader->FileHeader.SizeOfOptionalHeader);
-
-            for (uint i = 0; i < ntHeader->FileHeader.NumberOfSections; i++, section++)
-            {
-                if (section->VirtualAddress <= rva && section->VirtualAddress + section->SizeOfRawData > rva)
-                {
-                    return image + section->PointerToRawData + (rva - section->VirtualAddress);
-                }
-            }
-
-            return null;
         }
     }
 
