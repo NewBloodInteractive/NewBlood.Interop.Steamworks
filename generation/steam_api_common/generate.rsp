@@ -1,6 +1,11 @@
 @../base.rsp
 --exclude
 CCallbackBase
+STEAM_CALLBACK
+STEAM_CALLBACK_MANUAL
+STEAM_GAMESERVER_CALLBACK
+STEAM_GAMESERVER_CALLBACK_MANUAL
+STEAM_PRIVATE_API
 --file
 steam_api_common.g.h
 --output

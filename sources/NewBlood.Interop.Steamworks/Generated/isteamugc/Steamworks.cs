@@ -1,3 +1,5 @@
+using System;
+
 namespace NewBlood.Interop.Steamworks;
 
 public static partial class Steamworks
@@ -13,4 +15,7 @@ public static partial class Steamworks
 
     [NativeTypeName("const uint32")]
     public const uint k_cchDeveloperMetadataMax = 5000;
+
+    [NativeTypeName("#define STEAMUGC_INTERFACE_VERSION \"STEAMUGC_INTERFACE_VERSION018\"")]
+    public static ReadOnlySpan<byte> STEAMUGC_INTERFACE_VERSION => "STEAMUGC_INTERFACE_VERSION018"u8;
 }

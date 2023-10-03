@@ -1,5 +1,6 @@
 @../base.rsp
 --exclude
+BChatMemberStateChangeRemoved
 HSERVERQUERY_INVALID
 ISteamGameSearch
 ISteamMatchmaking

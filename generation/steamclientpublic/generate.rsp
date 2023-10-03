@@ -3,6 +3,7 @@
 CGameID
 CSteamID
 EChatSteamIDInstanceFlags
+VALVE_COMPILE_TIME_ASSERT
 --file
 steamclientpublic.g.h
 --output
