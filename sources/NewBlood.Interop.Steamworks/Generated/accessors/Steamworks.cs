@@ -82,13 +82,13 @@ public static unsafe partial class Steamworks
 
     public static ISteamController* SteamAPI_SteamController() => SteamAPI_SteamController_v008();
 
-    public static ISteamUGC* SteamUGC() => SteamAPI_SteamUGC_v017();
+    public static ISteamUGC* SteamUGC() => SteamAPI_SteamUGC_v018();
 
-    public static ISteamUGC* SteamAPI_SteamUGC() => SteamAPI_SteamUGC_v017();
+    public static ISteamUGC* SteamAPI_SteamUGC() => SteamAPI_SteamUGC_v018();
 
-    public static ISteamUGC* SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v017();
+    public static ISteamUGC* SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v018();
 
-    public static ISteamUGC* SteamAPI_SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v017();
+    public static ISteamUGC* SteamAPI_SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v018();
 
     public static ISteamAppList* SteamAppList() => SteamAPI_SteamAppList_v001();
 
@@ -106,17 +106,17 @@ public static unsafe partial class Steamworks
 
     public static ISteamInventory* SteamAPI_SteamGameServerInventory() => SteamAPI_SteamGameServerInventory_v003();
 
-    public static ISteamVideo* SteamVideo() => SteamAPI_SteamVideo_v002();
+    public static ISteamVideo* SteamVideo() => SteamAPI_SteamVideo_v003();
 
-    public static ISteamVideo* SteamAPI_SteamVideo() => SteamAPI_SteamVideo_v002();
+    public static ISteamVideo* SteamAPI_SteamVideo() => SteamAPI_SteamVideo_v003();
 
     public static ISteamParentalSettings* SteamParentalSettings() => SteamAPI_SteamParentalSettings_v001();
 
     public static ISteamParentalSettings* SteamAPI_SteamParentalSettings() => SteamAPI_SteamParentalSettings_v001();
 
-    public static ISteamRemotePlay* SteamRemotePlay() => SteamAPI_SteamRemotePlay_v001();
+    public static ISteamRemotePlay* SteamRemotePlay() => SteamAPI_SteamRemotePlay_v002();
 
-    public static ISteamRemotePlay* SteamAPI_SteamRemotePlay() => SteamAPI_SteamRemotePlay_v001();
+    public static ISteamRemotePlay* SteamAPI_SteamRemotePlay() => SteamAPI_SteamRemotePlay_v002();
 
     public static ISteamNetworkingMessages* SteamNetworkingMessages_SteamAPI() => SteamAPI_SteamNetworkingMessages_SteamAPI_v002();
 

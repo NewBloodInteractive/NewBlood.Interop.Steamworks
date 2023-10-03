@@ -6,4 +6,5 @@ isteamvideo.g.h
 --output
 ../../sources/NewBlood.Interop.Steamworks/Generated/isteamvideo
 --traverse
+ETimelineGameMode.h
 ../../sdk/public/steam/isteamvideo.h

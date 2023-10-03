@@ -1,0 +1,11 @@
+@../base.rsp
+--config
+default-codegen
+--file
+initex_helper.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/initex_helper
+--traverse
+initex_helper.g.h
+--with-access-specifier
+STEAMAPI_INITEX_INTERFACES=internal

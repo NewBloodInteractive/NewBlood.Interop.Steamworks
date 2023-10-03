@@ -5,10 +5,6 @@ namespace NewBlood.Interop.Steamworks;
 public static unsafe partial class Steamworks
 {
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("bool")]
-    public static extern byte SteamAPI_Init();
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern void SteamAPI_Shutdown();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -61,4 +57,7 @@ public static unsafe partial class Steamworks
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
     public static extern byte SteamAPI_ManualDispatch_GetAPICallResult(HSteamPipe hSteamPipe, SteamAPICall_t hSteamAPICall, void* pCallback, int cubCallback, int iCallbackExpected, bool* pbFailed);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern ESteamAPIInitResult SteamInternal_SteamAPI_Init([NativeTypeName("const char *")] sbyte* pszInternalCheckInterfaceVersions, [NativeTypeName("SteamErrMsg *")] sbyte** pOutErrMsg);
 }
