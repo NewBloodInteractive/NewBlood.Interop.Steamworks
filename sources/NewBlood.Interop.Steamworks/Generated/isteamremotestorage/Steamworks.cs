@@ -1,3 +1,5 @@
+using System;
+
 namespace NewBlood.Interop.Steamworks;
 
 public static partial class Steamworks
@@ -37,4 +39,7 @@ public static partial class Steamworks
 
     [NativeTypeName("const uint32")]
     public const uint k_cchPublishedFileURLMax = 256;
+
+    [NativeTypeName("#define STEAMREMOTESTORAGE_INTERFACE_VERSION \"STEAMREMOTESTORAGE_INTERFACE_VERSION016\"")]
+    public static ReadOnlySpan<byte> STEAMREMOTESTORAGE_INTERFACE_VERSION => "STEAMREMOTESTORAGE_INTERFACE_VERSION016"u8;
 }

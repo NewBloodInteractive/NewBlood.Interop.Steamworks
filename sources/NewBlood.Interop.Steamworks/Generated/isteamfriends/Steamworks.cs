@@ -1,3 +1,5 @@
+using System;
+
 namespace NewBlood.Interop.Steamworks;
 
 public static partial class Steamworks
@@ -25,4 +27,7 @@ public static partial class Steamworks
     public const int k_cchMaxRichPresenceKeyLength = 64;
 
     public const int k_cchMaxRichPresenceValueLength = 256;
+
+    [NativeTypeName("#define STEAMFRIENDS_INTERFACE_VERSION \"SteamFriends017\"")]
+    public static ReadOnlySpan<byte> STEAMFRIENDS_INTERFACE_VERSION => "SteamFriends017"u8;
 }

@@ -5,6 +5,7 @@
 exclude-enum-operators
 exclude-funcs-with-body
 generate-file-scoped-namespaces
+generate-macro-bindings
 multi-file
 preview-codegen
 --define-macro
