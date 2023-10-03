@@ -36,7 +36,12 @@ internal unsafe ref struct CCallback
 
     private static CCallbackBase.MethodTable* AllocateMethodTable()
     {
-        var vtable = (CCallbackBase.MethodTable*)SteamInteropHelpers.AllocateTypeAssociatedMemory(typeof(CCallback), sizeof(CCallbackBase.MethodTable));
+        var buffer = (void**)SteamInteropHelpers.AllocateTypeAssociatedMemory(typeof(CCallback), sizeof(CCallbackBase.MethodTable) + sizeof(void*));
+        var vtable = (CCallbackBase.MethodTable*)(buffer + 1);
+
+        // The first pointer in the buffer is the RTTI pointer, which precedes the vtable entries.
+        // We want it to be zeroed to ensure that any attempts to use dynamic_cast etc will crash.
+        *buffer = null;
 
     #if NET5_0_OR_GREATER
         vtable->RunCallback          = &RunCallback;
