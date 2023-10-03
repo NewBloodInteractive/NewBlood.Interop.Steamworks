@@ -8,4 +8,5 @@ initex_helper.g.h
 --traverse
 initex_helper.g.h
 --with-access-specifier
+STEAMAPI_GAMESERVER_INITEX_INTERFACES=internal
 STEAMAPI_INITEX_INTERFACES=internal
