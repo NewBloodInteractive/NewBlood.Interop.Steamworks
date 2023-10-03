@@ -2719,10 +2719,10 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamController_GetControllerBindingRevision(ISteamController* self, ControllerHandle_t controllerHandle, int* pMajor, int* pMinor);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUGC* SteamAPI_SteamUGC_v017();
+    public static extern ISteamUGC* SteamAPI_SteamUGC_v018();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUGC* SteamAPI_SteamGameServerUGC_v017();
+    public static extern ISteamUGC* SteamAPI_SteamGameServerUGC_v018();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("CreateQueryUserUGCRequest")]
@@ -2959,7 +2959,7 @@ public static unsafe partial class Steamworks
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("SetItemTags")]
-    public static extern byte SteamAPI_ISteamUGC_SetItemTags(ISteamUGC* self, UGCUpdateHandle_t updateHandle, [NativeTypeName("const SteamParamStringArray_t *")] SteamParamStringArray_t* pTags);
+    public static extern byte SteamAPI_ISteamUGC_SetItemTags(ISteamUGC* self, UGCUpdateHandle_t updateHandle, [NativeTypeName("const SteamParamStringArray_t *")] SteamParamStringArray_t* pTags, [NativeTypeName("bool")] byte bAllowAdminTags);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
@@ -3141,6 +3141,11 @@ public static unsafe partial class Steamworks
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetWorkshopEULAStatus")]
     public static extern SteamAPICall_t SteamAPI_ISteamUGC_GetWorkshopEULAStatus(ISteamUGC* self);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("uint32")]
+    [GenerateMemberFunction("GetUserContentDescriptorPreferences")]
+    public static extern uint SteamAPI_ISteamUGC_GetUserContentDescriptorPreferences(ISteamUGC* self, EUGCContentDescriptorID* pvecDescriptors, [NativeTypeName("uint32")] uint cMaxEntries);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamAppList* SteamAPI_SteamAppList_v001();
@@ -3510,7 +3515,7 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamInventory_InspectItem(ISteamInventory* self, SteamInventoryResult_t* pResultHandle, [NativeTypeName("const char *")] sbyte* pchItemToken);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamVideo* SteamAPI_SteamVideo_v002();
+    public static extern ISteamVideo* SteamAPI_SteamVideo_v003();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetVideoURL")]
@@ -3529,6 +3534,26 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("GetOPFStringForApp")]
     public static extern byte SteamAPI_ISteamVideo_GetOPFStringForApp(ISteamVideo* self, AppId_t unVideoAppID, [NativeTypeName("char *")] sbyte* pchBuffer, [NativeTypeName("int32 *")] int* pnBufferSize);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("AddTimelineHighlightMarker")]
+    public static extern void SteamAPI_ISteamVideo_AddTimelineHighlightMarker(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("uint32")] uint unPriority);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("AddTimelineTimestamp")]
+    public static extern void SteamAPI_ISteamVideo_AddTimelineTimestamp(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchTitle);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("AddTimelineRangeStart")]
+    public static extern void SteamAPI_ISteamVideo_AddTimelineRangeStart(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchID, [NativeTypeName("const char *")] sbyte* pchTitle);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("AddTimelineRangeEnd")]
+    public static extern void SteamAPI_ISteamVideo_AddTimelineRangeEnd(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchID);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("SetTimelineGameMode")]
+    public static extern void SteamAPI_ISteamVideo_SetTimelineGameMode(ISteamVideo* self, ETimelineGameMode eMode);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamParentalSettings* SteamAPI_SteamParentalSettings_v001();
@@ -3564,7 +3589,7 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamParentalSettings_BIsFeatureInBlockList(ISteamParentalSettings* self, EParentalFeature eFeature);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamRemotePlay* SteamAPI_SteamRemotePlay_v001();
+    public static extern ISteamRemotePlay* SteamAPI_SteamRemotePlay_v002();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("uint32")]
@@ -3593,6 +3618,11 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("BGetSessionClientResolution")]
     public static extern byte SteamAPI_ISteamRemotePlay_BGetSessionClientResolution(ISteamRemotePlay* self, RemotePlaySessionID_t unSessionID, int* pnResolutionX, int* pnResolutionY);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("BStartRemotePlayTogether")]
+    public static extern byte SteamAPI_ISteamRemotePlay_BStartRemotePlayTogether(ISteamRemotePlay* self, [NativeTypeName("bool")] byte bShowOverlay);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]

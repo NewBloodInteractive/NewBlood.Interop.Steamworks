@@ -22,6 +22,5 @@ public static unsafe partial class Steamworks
     public static extern ulong SteamGameServer_GetSteamID();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("bool")]
-    public static extern byte SteamInternal_GameServer_Init([NativeTypeName("uint32")] uint unIP, [NativeTypeName("uint16")] ushort usLegacySteamPort, [NativeTypeName("uint16")] ushort usGamePort, [NativeTypeName("uint16")] ushort usQueryPort, EServerMode eServerMode, [NativeTypeName("const char *")] sbyte* pchVersionString);
+    public static extern ESteamAPIInitResult SteamInternal_GameServer_Init_V2([NativeTypeName("uint32")] uint unIP, [NativeTypeName("uint16")] ushort usGamePort, [NativeTypeName("uint16")] ushort usQueryPort, EServerMode eServerMode, [NativeTypeName("const char *")] sbyte* pchVersionString, [NativeTypeName("const char *")] sbyte* pszInternalCheckInterfaceVersions, [NativeTypeName("SteamErrMsg *")] sbyte** pOutErrMsg);
 }

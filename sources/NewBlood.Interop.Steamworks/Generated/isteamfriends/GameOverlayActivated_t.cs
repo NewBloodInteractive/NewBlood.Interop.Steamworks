@@ -14,5 +14,8 @@ public partial struct GameOverlayActivated_t
 
     public AppId_t m_nAppID;
 
+    [NativeTypeName("uint32")]
+    public uint m_dwOverlayPID;
+
     public const int k_iCallback = k_iSteamFriendsCallbacks + 31;
 }
