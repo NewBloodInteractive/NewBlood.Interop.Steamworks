@@ -114,10 +114,6 @@ public static unsafe partial class Steamworks
     public static extern ISteamUGC* SteamAPI_ISteamClient_GetISteamUGC(ISteamClient* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, [NativeTypeName("const char *")] sbyte* pchVersion);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("GetISteamAppList")]
-    public static extern ISteamAppList* SteamAPI_ISteamClient_GetISteamAppList(ISteamClient* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, [NativeTypeName("const char *")] sbyte* pchVersion);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetISteamMusic")]
     public static extern ISteamMusic* SteamAPI_ISteamClient_GetISteamMusic(ISteamClient* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, [NativeTypeName("const char *")] sbyte* pchVersion);
 
@@ -132,10 +128,6 @@ public static unsafe partial class Steamworks
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetISteamInventory")]
     public static extern ISteamInventory* SteamAPI_ISteamClient_GetISteamInventory(ISteamClient* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, [NativeTypeName("const char *")] sbyte* pchVersion);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("GetISteamVideo")]
-    public static extern ISteamVideo* SteamAPI_ISteamClient_GetISteamVideo(ISteamClient* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, [NativeTypeName("const char *")] sbyte* pchVersion);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetISteamParentalSettings")]
@@ -836,6 +828,11 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("DismissFloatingGamepadTextInput")]
     public static extern byte SteamAPI_ISteamUtils_DismissFloatingGamepadTextInput(ISteamUtils* self);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("DismissGamepadTextInput")]
+    public static extern byte SteamAPI_ISteamUtils_DismissGamepadTextInput(ISteamUtils* self);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamMatchmaking* SteamAPI_SteamMatchmaking_v009();
@@ -3148,31 +3145,6 @@ public static unsafe partial class Steamworks
     public static extern uint SteamAPI_ISteamUGC_GetUserContentDescriptorPreferences(ISteamUGC* self, EUGCContentDescriptorID* pvecDescriptors, [NativeTypeName("uint32")] uint cMaxEntries);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamAppList* SteamAPI_SteamAppList_v001();
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("uint32")]
-    [GenerateMemberFunction("GetNumInstalledApps")]
-    public static extern uint SteamAPI_ISteamAppList_GetNumInstalledApps(ISteamAppList* self);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("uint32")]
-    [GenerateMemberFunction("GetInstalledApps")]
-    public static extern uint SteamAPI_ISteamAppList_GetInstalledApps(ISteamAppList* self, AppId_t* pvecAppID, [NativeTypeName("uint32")] uint unMaxAppIDs);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("GetAppName")]
-    public static extern int SteamAPI_ISteamAppList_GetAppName(ISteamAppList* self, AppId_t nAppID, [NativeTypeName("char *")] sbyte* pchName, int cchNameMax);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("GetAppInstallDir")]
-    public static extern int SteamAPI_ISteamAppList_GetAppInstallDir(ISteamAppList* self, AppId_t nAppID, [NativeTypeName("char *")] sbyte* pchDirectory, int cchNameMax);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("GetAppBuildId")]
-    public static extern int SteamAPI_ISteamAppList_GetAppBuildId(ISteamAppList* self, AppId_t nAppID);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamHTMLSurface* SteamAPI_SteamHTMLSurface_v005();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -3513,47 +3485,6 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("InspectItem")]
     public static extern byte SteamAPI_ISteamInventory_InspectItem(ISteamInventory* self, SteamInventoryResult_t* pResultHandle, [NativeTypeName("const char *")] sbyte* pchItemToken);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamVideo* SteamAPI_SteamVideo_v003();
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("GetVideoURL")]
-    public static extern void SteamAPI_ISteamVideo_GetVideoURL(ISteamVideo* self, AppId_t unVideoAppID);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("bool")]
-    [GenerateMemberFunction("IsBroadcasting")]
-    public static extern byte SteamAPI_ISteamVideo_IsBroadcasting(ISteamVideo* self, int* pnNumViewers);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("GetOPFSettings")]
-    public static extern void SteamAPI_ISteamVideo_GetOPFSettings(ISteamVideo* self, AppId_t unVideoAppID);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("bool")]
-    [GenerateMemberFunction("GetOPFStringForApp")]
-    public static extern byte SteamAPI_ISteamVideo_GetOPFStringForApp(ISteamVideo* self, AppId_t unVideoAppID, [NativeTypeName("char *")] sbyte* pchBuffer, [NativeTypeName("int32 *")] int* pnBufferSize);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("AddTimelineHighlightMarker")]
-    public static extern void SteamAPI_ISteamVideo_AddTimelineHighlightMarker(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("uint32")] uint unPriority);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("AddTimelineTimestamp")]
-    public static extern void SteamAPI_ISteamVideo_AddTimelineTimestamp(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchTitle);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("AddTimelineRangeStart")]
-    public static extern void SteamAPI_ISteamVideo_AddTimelineRangeStart(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchID, [NativeTypeName("const char *")] sbyte* pchTitle);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("AddTimelineRangeEnd")]
-    public static extern void SteamAPI_ISteamVideo_AddTimelineRangeEnd(ISteamVideo* self, [NativeTypeName("const char *")] sbyte* pchID);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("SetTimelineGameMode")]
-    public static extern void SteamAPI_ISteamVideo_SetTimelineGameMode(ISteamVideo* self, ETimelineGameMode eMode);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamParentalSettings* SteamAPI_SteamParentalSettings_v001();

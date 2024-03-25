@@ -1,4 +1,11 @@
 @../base.rsp
+--exclude
+SteamAPI_ISteamClient_GetISteamVideo
+SteamAPI_ISteamVideo_GetOPFSettings
+SteamAPI_ISteamVideo_GetOPFStringForApp
+SteamAPI_ISteamVideo_GetVideoURL
+SteamAPI_ISteamVideo_IsBroadcasting
+SteamAPI_SteamVideo_v002
 --file
 steam_api_flat.g.h
 --output

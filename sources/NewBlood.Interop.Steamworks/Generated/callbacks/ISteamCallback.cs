@@ -1384,22 +1384,6 @@ public partial struct SteamAPICallCompleted_t : ISteamCallback
     int ISteamCallback.CallbackId => k_iCallback;
 }
 
-public partial struct SteamAppInstalled_t : ISteamCallback
-{
-#if NET6_0_OR_GREATER
-    static
-#endif
-    int ISteamCallback.CallbackId => k_iCallback;
-}
-
-public partial struct SteamAppUninstalled_t : ISteamCallback
-{
-#if NET6_0_OR_GREATER
-    static
-#endif
-    int ISteamCallback.CallbackId => k_iCallback;
-}
-
 public partial struct SteamInputConfigurationLoaded_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER

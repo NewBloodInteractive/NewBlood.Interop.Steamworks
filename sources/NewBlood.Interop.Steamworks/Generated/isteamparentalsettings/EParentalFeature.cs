@@ -1,3 +1,5 @@
+using System;
+
 namespace NewBlood.Interop.Steamworks;
 
 public enum EParentalFeature
@@ -16,6 +18,7 @@ public enum EParentalFeature
     k_EFeatureLibrary = 11,
     k_EFeatureTest = 12,
     k_EFeatureSiteLicense = 13,
+    [Obsolete]
     k_EFeatureKioskMode = 14,
     k_EFeatureMax,
 }

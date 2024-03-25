@@ -5,6 +5,9 @@ namespace NewBlood.Interop.Steamworks;
 public static unsafe partial class Steamworks
 {
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern ESteamAPIInitResult SteamAPI_InitFlat([NativeTypeName("SteamErrMsg *")] sbyte** pOutErrMsg);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern void SteamAPI_Shutdown();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]

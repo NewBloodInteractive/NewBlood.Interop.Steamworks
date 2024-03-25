@@ -73,7 +73,7 @@ internal static class Program
         {
             foreach (var method in @interface.Methods)
             {
-                if (method.FlatName.EndsWith("_DEPRECATED"))
+                if (method.FlatName.EndsWith("_DEPRECATED", StringComparison.OrdinalIgnoreCase))
                 {
                     remappings[method.FlatName] = method.FlatName[..^"_DEPRECATED".Length];
                 }
@@ -87,7 +87,7 @@ internal static class Program
 
             foreach (var method in @struct.Methods)
             {
-                if (method.FlatName.EndsWith("_DEPRECATED"))
+                if (method.FlatName.EndsWith("_DEPRECATED", StringComparison.OrdinalIgnoreCase))
                 {
                     remappings[method.FlatName] = method.FlatName[..^"_DEPRECATED".Length];
                 }
@@ -98,7 +98,7 @@ internal static class Program
         {
             foreach (var entry in @enum.Values)
             {
-                if (entry.Name.EndsWith("_DEPRECATED"))
+                if (entry.Name.EndsWith("_DEPRECATED", StringComparison.OrdinalIgnoreCase))
                 {
                     remappings[$"{@enum.FullName ?? @enum.Name}::{entry.Name}"] = entry.Name[..^"_DEPRECATED".Length];
                 }

@@ -12,4 +12,5 @@ public enum EItemState
     k_EItemStateNeedsUpdate = 8,
     k_EItemStateDownloading = 16,
     k_EItemStateDownloadPending = 32,
+    k_EItemStateDisabledLocally = 64,
 }
