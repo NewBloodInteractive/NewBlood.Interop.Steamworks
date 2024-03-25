@@ -11,6 +11,9 @@ public static partial class Steamworks
     [NativeTypeName("const SteamAPICall_t")]
     public const ulong k_uAPICallInvalid = 0x0;
 
+    [NativeTypeName("const AccountID_t")]
+    public const uint k_uAccountIdInvalid = 0;
+
     [NativeTypeName("const PartyBeaconID_t")]
     public const ulong k_ulPartyBeaconIdInvalid = 0;
 }

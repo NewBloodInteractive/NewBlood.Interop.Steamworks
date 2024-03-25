@@ -90,8 +90,6 @@ public static unsafe partial class Steamworks
 
     public const int k_iSteamStreamClientCallbacks = 3500;
 
-    public const int k_iSteamAppListCallbacks = 3900;
-
     public const int k_iSteamMusicCallbacks = 4000;
 
     public const int k_iSteamMusicRemoteCallbacks = 4100;

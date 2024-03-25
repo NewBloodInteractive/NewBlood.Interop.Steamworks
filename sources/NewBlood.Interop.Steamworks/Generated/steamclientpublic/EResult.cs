@@ -129,4 +129,6 @@ public enum EResult
     k_EResultChargerRequired = 125,
     k_EResultCachedCredentialInvalid = 126,
     K_EResultPhoneNumberIsVOIP = 127,
+    k_EResultNotSupported = 128,
+    k_EResultFamilySizeLimitExceeded = 129,
 }

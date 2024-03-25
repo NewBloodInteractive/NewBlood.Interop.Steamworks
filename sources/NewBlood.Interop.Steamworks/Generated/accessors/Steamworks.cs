@@ -90,10 +90,6 @@ public static unsafe partial class Steamworks
 
     public static ISteamUGC* SteamAPI_SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v018();
 
-    public static ISteamAppList* SteamAppList() => SteamAPI_SteamAppList_v001();
-
-    public static ISteamAppList* SteamAPI_SteamAppList() => SteamAPI_SteamAppList_v001();
-
     public static ISteamHTMLSurface* SteamHTMLSurface() => SteamAPI_SteamHTMLSurface_v005();
 
     public static ISteamHTMLSurface* SteamAPI_SteamHTMLSurface() => SteamAPI_SteamHTMLSurface_v005();
@@ -105,10 +101,6 @@ public static unsafe partial class Steamworks
     public static ISteamInventory* SteamGameServerInventory() => SteamAPI_SteamGameServerInventory_v003();
 
     public static ISteamInventory* SteamAPI_SteamGameServerInventory() => SteamAPI_SteamGameServerInventory_v003();
-
-    public static ISteamVideo* SteamVideo() => SteamAPI_SteamVideo_v003();
-
-    public static ISteamVideo* SteamAPI_SteamVideo() => SteamAPI_SteamVideo_v003();
 
     public static ISteamParentalSettings* SteamParentalSettings() => SteamAPI_SteamParentalSettings_v001();
 

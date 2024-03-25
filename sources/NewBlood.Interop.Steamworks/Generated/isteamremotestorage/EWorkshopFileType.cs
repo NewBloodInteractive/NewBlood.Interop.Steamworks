@@ -19,5 +19,6 @@ public enum EWorkshopFileType
     k_EWorkshopFileTypeSteamworksAccessInvite = 13,
     k_EWorkshopFileTypeSteamVideo = 14,
     k_EWorkshopFileTypeGameManagedItem = 15,
-    k_EWorkshopFileTypeMax = 16,
+    k_EWorkshopFileTypeClip = 16,
+    k_EWorkshopFileTypeMax = 17,
 }

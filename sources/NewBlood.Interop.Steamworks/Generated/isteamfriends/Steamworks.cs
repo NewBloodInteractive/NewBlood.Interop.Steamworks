@@ -16,6 +16,12 @@ public static partial class Steamworks
     [NativeTypeName("const int")]
     public const int k_cEnumerateFollowersMax = 50;
 
+    [NativeTypeName("const uint16")]
+    public const ushort k_usFriendGameInfoQueryPort_NotInitialized = 0xFFFF;
+
+    [NativeTypeName("const uint16")]
+    public const ushort k_usFriendGameInfoQueryPort_Error = 0xFFFE;
+
     public const int k_cchPersonaNameMax = 128;
     public const int k_cwchPersonaNameMax = 32;
 
