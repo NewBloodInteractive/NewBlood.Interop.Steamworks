@@ -4,11 +4,11 @@ set PACKAGE_DIR=%CD%\dist\com.newblood.interop.steamworks
 
 rem Build NewBlood.Interop.Steamworks for Unix
 dotnet build sources\NewBlood.Interop.Steamworks %BUILD_ARGS%
-copy /b /v /y "sources\NewBlood.Interop.Steamworks\bin\Release\netstandard2.1\NewBlood.Interop.Steamworks.dll" "%PACKAGE_DIR%\Managed\Unix\"
+copy /b /v /y "artifacts\bin\NewBlood.Interop.Steamworks\release_netstandard2.1\NewBlood.Interop.Steamworks.dll" "%PACKAGE_DIR%\Managed\Unix\"
 
 rem Build NewBlood.Interop.Steamworks for Windows
 dotnet build sources\NewBlood.Interop.Steamworks %BUILD_ARGS% -p:BuildForWindows=true
-copy /b /v /y "sources\NewBlood.Interop.Steamworks\bin\Release\netstandard2.1\NewBlood.Interop.Steamworks.dll" "%PACKAGE_DIR%\Managed\Windows\"
+copy /b /v /y "artifacts\bin\NewBlood.Interop.Steamworks\release_netstandard2.1\NewBlood.Interop.Steamworks.dll" "%PACKAGE_DIR%\Managed\Windows\"
 
 rem Copy native Steamworks API libraries
 copy /b /v /y sdk\redistributable_bin\steam_api.dll "%PACKAGE_DIR%\Native\x86\steam_api.dll"
