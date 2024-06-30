@@ -25,7 +25,7 @@ rem Generate bindings from headers using ClangSharp
 pushd generation
 for /r %%f in (generate.rsp) do if exist %%f (
     pushd %%~dpf
-    ClangSharpPInvokeGenerator @generate.rsp
+    dotnet tool run ClangSharpPInvokeGenerator -- @generate.rsp
     popd
 )
 popd
