@@ -1,6 +1,6 @@
 @../base.rsp
 --config
-default-codegen
+compatible-codegen
 --file
 initex_helper.g.h
 --output

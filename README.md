@@ -7,9 +7,8 @@ A modern, low-level Steamworks API binding for .NET
 3. Extract the latest [Game Coordinator SDK](https://partner.steamgames.com/doc/features/multiplayer/steamdatagramrelay#7) into the repository's `sdk` directory.
 
 # Generating Updated Bindings (on Windows)
-1. Install [ClangSharpPInvokeGenerator](https://www.nuget.org/packages/ClangSharpPInvokeGenerator) version 15.0.2 or higher as a global tool.
-2. Clear the `sources/NewBlood.Interop.Steamworks/Generated` directory if it exists.
-3. Run `generate.cmd`.
+1. Clear the `sources/NewBlood.Interop.Steamworks/Generated` directory if it exists.
+2. Run `generate.cmd`.
 
 # Building for Unity (on Windows)
 1. Ensure that the bindings have been generated.
