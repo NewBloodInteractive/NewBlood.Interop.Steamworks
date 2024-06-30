@@ -113,4 +113,6 @@ public static unsafe partial class Steamworks
     public const int k_iSteamRemotePlayCallbacks = 5700;
 
     public const int k_iSteamChatCallbacks = 5900;
+
+    public const int k_iSteamTimelineCallbacks = 6000;
 }

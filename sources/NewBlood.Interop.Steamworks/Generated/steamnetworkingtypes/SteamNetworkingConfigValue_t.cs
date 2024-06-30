@@ -8,7 +8,7 @@ public partial struct SteamNetworkingConfigValue_t
 
     public ESteamNetworkingConfigDataType m_eDataType;
 
-    [NativeTypeName("__AnonymousRecord_steamnetworkingtypes_L1680_C2")]
+    [NativeTypeName("union (anonymous union at ../../sdk/public/steam/steamnetworkingtypes.h:1689:2)")]
     public _m_val_e__Union m_val;
 
     [StructLayout(LayoutKind.Explicit)]

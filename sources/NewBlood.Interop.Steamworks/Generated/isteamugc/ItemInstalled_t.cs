@@ -10,5 +10,10 @@ public partial struct ItemInstalled_t
 
     public PublishedFileId_t m_nPublishedFileId;
 
+    public UGCHandle_t m_hLegacyContent;
+
+    [NativeTypeName("uint64")]
+    public ulong m_unManifestID;
+
     public const int k_iCallback = k_iSteamUGCCallbacks + 5;
 }

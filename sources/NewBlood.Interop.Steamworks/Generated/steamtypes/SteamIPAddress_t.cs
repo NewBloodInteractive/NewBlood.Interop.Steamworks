@@ -7,7 +7,7 @@ namespace NewBlood.Interop.Steamworks;
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SteamIPAddress_t
 {
-    [NativeTypeName("__AnonymousRecord_steamtypes_L117_C2")]
+    [NativeTypeName("SteamIPAddress_t::(anonymous union at ../../sdk/public/steam/steamtypes.h:117:2)")]
     public _Anonymous_e__Union Anonymous;
 
     public ESteamIPType m_eType;

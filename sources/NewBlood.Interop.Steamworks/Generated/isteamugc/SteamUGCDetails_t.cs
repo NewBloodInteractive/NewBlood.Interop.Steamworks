@@ -73,4 +73,7 @@ public unsafe partial struct SteamUGCDetails_t
 
     [NativeTypeName("uint32")]
     public uint m_unNumChildren;
+
+    [NativeTypeName("uint64")]
+    public ulong m_ulTotalFilesSize;
 }

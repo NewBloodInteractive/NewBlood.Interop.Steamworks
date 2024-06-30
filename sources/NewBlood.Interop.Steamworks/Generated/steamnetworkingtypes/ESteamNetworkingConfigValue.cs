@@ -15,6 +15,7 @@ public enum ESteamNetworkingConfigValue
     k_ESteamNetworkingConfig_SendRateMax = 11,
     k_ESteamNetworkingConfig_NagleTime = 12,
     k_ESteamNetworkingConfig_IP_AllowWithoutAuth = 23,
+    k_ESteamNetworkingConfig_IPLocalHost_AllowWithoutAuth = 52,
     k_ESteamNetworkingConfig_MTU_PacketSize = 32,
     k_ESteamNetworkingConfig_MTU_DataSize = 33,
     k_ESteamNetworkingConfig_Unencrypted = 34,

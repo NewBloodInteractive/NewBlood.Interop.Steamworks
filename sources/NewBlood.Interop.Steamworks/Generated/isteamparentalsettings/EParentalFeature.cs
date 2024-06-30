@@ -20,5 +20,6 @@ public enum EParentalFeature
     k_EFeatureSiteLicense = 13,
     [Obsolete]
     k_EFeatureKioskMode = 14,
+    k_EFeatureBlockAlways = 15,
     k_EFeatureMax,
 }
