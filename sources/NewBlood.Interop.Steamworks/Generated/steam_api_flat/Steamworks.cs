@@ -1870,6 +1870,20 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamApps_SetDlcContext(ISteamApps* self, AppId_t nAppID);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("GetNumBetas")]
+    public static extern int SteamAPI_ISteamApps_GetNumBetas(ISteamApps* self, AppId_t unAppID, int* pnAvailable, int* pnPrivate);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("GetBetaInfo")]
+    public static extern byte SteamAPI_ISteamApps_GetBetaInfo(ISteamApps* self, AppId_t unAppID, int iBetaIndex, [NativeTypeName("uint32 *")] uint* punFlags, [NativeTypeName("uint32 *")] uint* punBuildID, [NativeTypeName("char *")] sbyte* pchBetaName, int cchBetaName, [NativeTypeName("char *")] sbyte* pchDescription, int cchDescription);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("SetActiveBeta")]
+    public static extern byte SteamAPI_ISteamApps_SetActiveBeta(ISteamApps* self, AppId_t unAppID, [NativeTypeName("const char *")] sbyte* pchBetaName);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamNetworking* SteamAPI_SteamNetworking_v006();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -2716,10 +2730,10 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamController_GetControllerBindingRevision(ISteamController* self, ControllerHandle_t controllerHandle, int* pMajor, int* pMinor);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUGC* SteamAPI_SteamUGC_v018();
+    public static extern ISteamUGC* SteamAPI_SteamUGC_v020();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUGC* SteamAPI_SteamGameServerUGC_v018();
+    public static extern ISteamUGC* SteamAPI_SteamGameServerUGC_v020();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("CreateQueryUserUGCRequest")]
@@ -2808,6 +2822,16 @@ public static unsafe partial class Steamworks
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("uint32")]
+    [GenerateMemberFunction("GetNumSupportedGameVersions")]
+    public static extern uint SteamAPI_ISteamUGC_GetNumSupportedGameVersions(ISteamUGC* self, UGCQueryHandle_t handle, [NativeTypeName("uint32")] uint index);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("GetSupportedGameVersionData")]
+    public static extern byte SteamAPI_ISteamUGC_GetSupportedGameVersionData(ISteamUGC* self, UGCQueryHandle_t handle, [NativeTypeName("uint32")] uint index, [NativeTypeName("uint32")] uint versionIndex, [NativeTypeName("char *")] sbyte* pchGameBranchMin, [NativeTypeName("char *")] sbyte* pchGameBranchMax, [NativeTypeName("uint32")] uint cchGameBranchSize);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("uint32")]
     [GenerateMemberFunction("GetQueryUGCContentDescriptors")]
     public static extern uint SteamAPI_ISteamUGC_GetQueryUGCContentDescriptors(ISteamUGC* self, UGCQueryHandle_t handle, [NativeTypeName("uint32")] uint index, EUGCContentDescriptorID* pvecDescriptors, [NativeTypeName("uint32")] uint cMaxEntries);
 
@@ -2880,6 +2904,11 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("SetAllowCachedResponse")]
     public static extern byte SteamAPI_ISteamUGC_SetAllowCachedResponse(ISteamUGC* self, UGCQueryHandle_t handle, [NativeTypeName("uint32")] uint unMaxAgeSeconds);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("SetAdminQuery")]
+    public static extern byte SteamAPI_ISteamUGC_SetAdminQuery(ISteamUGC* self, UGCUpdateHandle_t handle, [NativeTypeName("bool")] byte bAdminQuery);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
@@ -3022,6 +3051,11 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("RemoveContentDescriptor")]
     public static extern byte SteamAPI_ISteamUGC_RemoveContentDescriptor(ISteamUGC* self, UGCUpdateHandle_t handle, EUGCContentDescriptorID descid);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("bool")]
+    [GenerateMemberFunction("SetRequiredGameVersions")]
+    public static extern byte SteamAPI_ISteamUGC_SetRequiredGameVersions(ISteamUGC* self, UGCUpdateHandle_t handle, [NativeTypeName("const char *")] sbyte* pszGameBranchMin, [NativeTypeName("const char *")] sbyte* pszGameBranchMax);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("SubmitItemUpdate")]
@@ -3485,6 +3519,28 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("InspectItem")]
     public static extern byte SteamAPI_ISteamInventory_InspectItem(ISteamInventory* self, SteamInventoryResult_t* pResultHandle, [NativeTypeName("const char *")] sbyte* pchItemToken);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern ISteamTimeline* SteamAPI_SteamTimeline_v001();
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("SetTimelineStateDescription")]
+    public static extern void SteamAPI_ISteamTimeline_SetTimelineStateDescription(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchDescription, float flTimeDelta);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("ClearTimelineStateDescription")]
+    public static extern void SteamAPI_ISteamTimeline_ClearTimelineStateDescription(ISteamTimeline* self, float flTimeDelta);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("AddTimelineEvent")]
+    public static extern void SteamAPI_ISteamTimeline_AddTimelineEvent(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("uint32")] uint unPriority, float flStartOffsetSeconds, float flDurationSeconds, ETimelineEventClipPriority ePossibleClip);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("SetTimelineGameMode")]
+    public static extern void SteamAPI_ISteamTimeline_SetTimelineGameMode(ISteamTimeline* self, ETimelineGameMode eMode);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern ISteamVideo* SteamAPI_SteamVideo_v007();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamParentalSettings* SteamAPI_SteamParentalSettings_v001();

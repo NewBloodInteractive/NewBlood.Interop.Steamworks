@@ -1,0 +1,9 @@
+@../base.rsp
+--exclude
+ISteamTimeline
+--file
+isteamtimeline.g.h
+--output
+../../sources/NewBlood.Interop.Steamworks/Generated/isteamtimeline
+--traverse
+../../sdk/public/steam/isteamtimeline.h

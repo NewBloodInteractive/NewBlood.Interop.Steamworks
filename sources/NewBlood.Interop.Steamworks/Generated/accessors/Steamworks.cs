@@ -82,13 +82,13 @@ public static unsafe partial class Steamworks
 
     public static ISteamController* SteamAPI_SteamController() => SteamAPI_SteamController_v008();
 
-    public static ISteamUGC* SteamUGC() => SteamAPI_SteamUGC_v018();
+    public static ISteamUGC* SteamUGC() => SteamAPI_SteamUGC_v020();
 
-    public static ISteamUGC* SteamAPI_SteamUGC() => SteamAPI_SteamUGC_v018();
+    public static ISteamUGC* SteamAPI_SteamUGC() => SteamAPI_SteamUGC_v020();
 
-    public static ISteamUGC* SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v018();
+    public static ISteamUGC* SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v020();
 
-    public static ISteamUGC* SteamAPI_SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v018();
+    public static ISteamUGC* SteamAPI_SteamGameServerUGC() => SteamAPI_SteamGameServerUGC_v020();
 
     public static ISteamHTMLSurface* SteamHTMLSurface() => SteamAPI_SteamHTMLSurface_v005();
 
@@ -101,6 +101,14 @@ public static unsafe partial class Steamworks
     public static ISteamInventory* SteamGameServerInventory() => SteamAPI_SteamGameServerInventory_v003();
 
     public static ISteamInventory* SteamAPI_SteamGameServerInventory() => SteamAPI_SteamGameServerInventory_v003();
+
+    public static ISteamTimeline* SteamTimeline() => SteamAPI_SteamTimeline_v001();
+
+    public static ISteamTimeline* SteamAPI_SteamTimeline() => SteamAPI_SteamTimeline_v001();
+
+    public static ISteamVideo* SteamVideo() => SteamAPI_SteamVideo_v007();
+
+    public static ISteamVideo* SteamAPI_SteamVideo() => SteamAPI_SteamVideo_v007();
 
     public static ISteamParentalSettings* SteamParentalSettings() => SteamAPI_SteamParentalSettings_v001();
 

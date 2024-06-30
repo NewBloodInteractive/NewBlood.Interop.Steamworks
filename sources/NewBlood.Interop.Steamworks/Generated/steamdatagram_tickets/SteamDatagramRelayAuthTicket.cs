@@ -26,7 +26,7 @@ public partial struct SteamDatagramRelayAuthTicket
 
     public int m_nExtraFields;
 
-    [NativeTypeName("ExtraField[16]")]
+    [NativeTypeName("SteamDatagramRelayAuthTicket::ExtraField[16]")]
     public _m_vecExtraFields_e__FixedBuffer m_vecExtraFields;
 
     public unsafe partial struct ExtraField
@@ -36,7 +36,7 @@ public partial struct SteamDatagramRelayAuthTicket
         [NativeTypeName("char[28]")]
         public fixed sbyte m_szName[28];
 
-        [NativeTypeName("__AnonymousRecord_steamdatagram_tickets_L192_C3")]
+        [NativeTypeName("SteamDatagramRelayAuthTicket::ExtraField::(anonymous union at ../../sdk/include/steam/steamdatagram_tickets.h:192:3)")]
         public _Anonymous_e__Union Anonymous;
 
         [UnscopedRef]
