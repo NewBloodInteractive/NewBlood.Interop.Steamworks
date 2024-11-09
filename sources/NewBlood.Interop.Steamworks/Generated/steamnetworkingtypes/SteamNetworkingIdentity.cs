@@ -11,7 +11,7 @@ public unsafe partial struct SteamNetworkingIdentity
 
     public int m_cbSize;
 
-    [NativeTypeName("SteamNetworkingIdentity::(anonymous union at ../../sdk/public/steam/steamnetworkingtypes.h:339:2)")]
+    [NativeTypeName("SteamNetworkingIdentity::(anonymous union at ../../sdk/public/steam/steamnetworkingtypes.h:332:2)")]
     public _Anonymous_e__Union Anonymous;
 
     [UnscopedRef]
@@ -29,15 +29,6 @@ public unsafe partial struct SteamNetworkingIdentity
         get
         {
             return ref Anonymous.m_PSNID;
-        }
-    }
-
-    [UnscopedRef]
-    public ref ulong m_stadiaID
-    {
-        get
-        {
-            return ref Anonymous.m_stadiaID;
         }
     }
 
@@ -110,10 +101,6 @@ public unsafe partial struct SteamNetworkingIdentity
         [FieldOffset(0)]
         [NativeTypeName("uint64")]
         public ulong m_PSNID;
-
-        [FieldOffset(0)]
-        [NativeTypeName("uint64")]
-        public ulong m_stadiaID;
 
         [FieldOffset(0)]
         [NativeTypeName("char[32]")]

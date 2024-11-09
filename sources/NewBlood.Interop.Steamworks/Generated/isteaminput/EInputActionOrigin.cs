@@ -408,6 +408,10 @@ public enum EInputActionOrigin
     k_EInputActionOrigin_SteamDeck_Reserved18,
     k_EInputActionOrigin_SteamDeck_Reserved19,
     k_EInputActionOrigin_SteamDeck_Reserved20,
+    k_EInputActionOrigin_Horipad_M1,
+    k_EInputActionOrigin_Horipad_M2,
+    k_EInputActionOrigin_Horipad_L4,
+    k_EInputActionOrigin_Horipad_R4,
     k_EInputActionOrigin_Count,
     k_EInputActionOrigin_MaximumPossibleValue = 32767,
 }

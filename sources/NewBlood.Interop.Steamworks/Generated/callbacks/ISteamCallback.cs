@@ -64,6 +64,22 @@ public partial struct AvatarImageLoaded_t : ISteamCallback
     int ISteamCallback.CallbackId => k_iCallback;
 }
 
+public partial struct BroadcastUploadStart_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
+public partial struct BroadcastUploadStop_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
 public partial struct ChangeNumOpenSlotsCallback_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER
@@ -1569,6 +1585,22 @@ public partial struct SteamServersDisconnected_t : ISteamCallback
 }
 
 public partial struct SteamShutdown_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
+public partial struct SteamTimelineEventRecordingExists_t : ISteamCallback
+{
+#if NET6_0_OR_GREATER
+    static
+#endif
+    int ISteamCallback.CallbackId => k_iCallback;
+}
+
+public partial struct SteamTimelineGamePhaseRecordingExists_t : ISteamCallback
 {
 #if NET6_0_OR_GREATER
     static
