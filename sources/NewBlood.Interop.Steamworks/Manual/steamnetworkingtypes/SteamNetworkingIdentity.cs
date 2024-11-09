@@ -1,12 +1,8 @@
 using System;
-using System.ComponentModel;
 
 namespace NewBlood.Interop.Steamworks;
 
-// Obsolete member 'memberA' overrides non-obsolete member 'memberB'.
-#pragma warning disable 0809
-
-public unsafe partial struct SteamNetworkingIdentity
+public unsafe partial struct SteamNetworkingIdentity : IEquatable<SteamNetworkingIdentity>
 {
     public static bool operator ==(in SteamNetworkingIdentity left, in SteamNetworkingIdentity right)
     {
@@ -24,17 +20,23 @@ public unsafe partial struct SteamNetworkingIdentity
         }
     }
 
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    [Obsolete("Equals() on SteamNetworkingIdentity will always throw an exception.")]
-    public override bool Equals(object? obj)
+    public readonly override bool Equals(object? obj)
     {
-        throw new NotSupportedException();
+        return obj is SteamNetworkingIdentity other && this == other;
     }
 
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    [Obsolete("GetHashCode() on SteamNetworkingIdentity will always throw an exception.")]
-    public override int GetHashCode()
+    public readonly bool Equals(SteamNetworkingIdentity other)
     {
-        throw new NotSupportedException();
+        return this == other;
+    }
+
+    public readonly override int GetHashCode()
+    {
+        int hash = HashCode.Combine((int)m_eType, m_cbSize);
+
+        for (int i = 0; i < 32; i++)
+            hash = HashCode.Combine(hash, Anonymous.m_reserved[i]);
+
+        return hash;
     }
 }
