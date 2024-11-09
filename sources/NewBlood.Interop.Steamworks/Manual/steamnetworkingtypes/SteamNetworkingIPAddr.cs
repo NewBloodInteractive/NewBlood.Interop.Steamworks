@@ -1,12 +1,8 @@
 using System;
-using System.ComponentModel;
 
 namespace NewBlood.Interop.Steamworks;
 
-// Obsolete member 'memberA' overrides non-obsolete member 'memberB'.
-#pragma warning disable 0809
-
-public unsafe partial struct SteamNetworkingIPAddr
+public unsafe partial struct SteamNetworkingIPAddr : IEquatable<SteamNetworkingIPAddr>
 {
     public static bool operator ==(in SteamNetworkingIPAddr left, in SteamNetworkingIPAddr right)
     {
@@ -24,17 +20,35 @@ public unsafe partial struct SteamNetworkingIPAddr
         }
     }
 
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    [Obsolete("Equals() on SteamNetworkingIPAddr will always throw an exception.")]
-    public override bool Equals(object? obj)
+    public readonly override bool Equals(object? obj)
     {
-        throw new NotSupportedException();
+        return obj is SteamNetworkingIPAddr other && this == other;
     }
 
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    [Obsolete("GetHashCode() on SteamNetworkingIPAddr will always throw an exception.")]
-    public override int GetHashCode()
+    public readonly bool Equals(SteamNetworkingIPAddr other)
     {
-        throw new NotSupportedException();
+        return this == other;
+    }
+
+    public readonly override int GetHashCode()
+    {
+        int hash;
+
+        fixed (SteamNetworkingIPAddr* pThis = &this)
+        {
+            if (Steamworks.SteamAPI_SteamNetworkingIPAddr_IsIPv4(pThis) != 0)
+                hash = *(int*)pThis->Anonymous.m_ipv4.m_ip;
+            else
+            {
+                hash = HashCode.Combine(
+                    *(int*)pThis->Anonymous.m_ipv6,
+                    *(int*)(pThis->Anonymous.m_ipv6 + 4),
+                    *(int*)(pThis->Anonymous.m_ipv6 + 8),
+                    *(int*)(pThis->Anonymous.m_ipv6 + 12)
+                );
+            }
+        }
+
+        return HashCode.Combine(hash, (int)m_port);
     }
 }
