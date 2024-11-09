@@ -38,9 +38,9 @@ public static unsafe partial class Steamworks
 
     public static ISteamRemoteStorage* SteamAPI_SteamRemoteStorage() => SteamAPI_SteamRemoteStorage_v016();
 
-    public static ISteamUserStats* SteamUserStats() => SteamAPI_SteamUserStats_v012();
+    public static ISteamUserStats* SteamUserStats() => SteamAPI_SteamUserStats_v013();
 
-    public static ISteamUserStats* SteamAPI_SteamUserStats() => SteamAPI_SteamUserStats_v012();
+    public static ISteamUserStats* SteamAPI_SteamUserStats() => SteamAPI_SteamUserStats_v013();
 
     public static ISteamApps* SteamApps() => SteamAPI_SteamApps_v008();
 
@@ -102,9 +102,9 @@ public static unsafe partial class Steamworks
 
     public static ISteamInventory* SteamAPI_SteamGameServerInventory() => SteamAPI_SteamGameServerInventory_v003();
 
-    public static ISteamTimeline* SteamTimeline() => SteamAPI_SteamTimeline_v001();
+    public static ISteamTimeline* SteamTimeline() => SteamAPI_SteamTimeline_v004();
 
-    public static ISteamTimeline* SteamAPI_SteamTimeline() => SteamAPI_SteamTimeline_v001();
+    public static ISteamTimeline* SteamAPI_SteamTimeline() => SteamAPI_SteamTimeline_v004();
 
     public static ISteamVideo* SteamVideo() => SteamAPI_SteamVideo_v007();
 

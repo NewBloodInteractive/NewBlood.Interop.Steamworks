@@ -131,4 +131,5 @@ public enum EResult
     K_EResultPhoneNumberIsVOIP = 127,
     k_EResultNotSupported = 128,
     k_EResultFamilySizeLimitExceeded = 129,
+    k_EResultOfflineAppCacheInvalid = 130,
 }

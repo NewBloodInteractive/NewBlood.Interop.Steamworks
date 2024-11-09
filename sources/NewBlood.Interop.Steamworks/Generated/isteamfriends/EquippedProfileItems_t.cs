@@ -25,5 +25,8 @@ public partial struct EquippedProfileItems_t
     [NativeTypeName("bool")]
     public byte m_bHasMiniProfileBackground;
 
+    [NativeTypeName("bool")]
+    public byte m_bFromCache;
+
     public const int k_iCallback = k_iSteamFriendsCallbacks + 51;
 }

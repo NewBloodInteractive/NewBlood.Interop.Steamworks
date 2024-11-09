@@ -10,6 +10,6 @@ public static partial class Steamworks
 
     public const int k_cLeaderboardDetailsMax = 64;
 
-    [NativeTypeName("#define STEAMUSERSTATS_INTERFACE_VERSION \"STEAMUSERSTATS_INTERFACE_VERSION012\"")]
-    public static ReadOnlySpan<byte> STEAMUSERSTATS_INTERFACE_VERSION => "STEAMUSERSTATS_INTERFACE_VERSION012"u8;
+    [NativeTypeName("#define STEAMUSERSTATS_INTERFACE_VERSION \"STEAMUSERSTATS_INTERFACE_VERSION013\"")]
+    public static ReadOnlySpan<byte> STEAMUSERSTATS_INTERFACE_VERSION => "STEAMUSERSTATS_INTERFACE_VERSION013"u8;
 }

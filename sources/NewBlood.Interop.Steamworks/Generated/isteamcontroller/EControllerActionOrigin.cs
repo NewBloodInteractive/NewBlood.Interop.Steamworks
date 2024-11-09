@@ -388,6 +388,10 @@ public enum EControllerActionOrigin
     k_EControllerActionOrigin_PS5_RightGrip,
     k_EControllerActionOrigin_PS5_LeftFn,
     k_EControllerActionOrigin_PS5_RightFn,
+    k_EControllerActionOrigin_Horipad_M1,
+    k_EControllerActionOrigin_Horipad_M2,
+    k_EControllerActionOrigin_Horipad_L4,
+    k_EControllerActionOrigin_Horipad_R4,
     k_EControllerActionOrigin_Count,
     k_EControllerActionOrigin_MaximumPossibleValue = 32767,
 }

@@ -1513,12 +1513,7 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamRemoteStorage_EndFileWriteBatch(ISteamRemoteStorage* self);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamUserStats* SteamAPI_SteamUserStats_v012();
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("bool")]
-    [GenerateMemberFunction("RequestCurrentStats")]
-    public static extern byte SteamAPI_ISteamUserStats_RequestCurrentStats(ISteamUserStats* self);
+    public static extern ISteamUserStats* SteamAPI_SteamUserStats_v013();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
@@ -1871,17 +1866,17 @@ public static unsafe partial class Steamworks
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("GetNumBetas")]
-    public static extern int SteamAPI_ISteamApps_GetNumBetas(ISteamApps* self, AppId_t unAppID, int* pnAvailable, int* pnPrivate);
+    public static extern int SteamAPI_ISteamApps_GetNumBetas(ISteamApps* self, int* pnAvailable, int* pnPrivate);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("GetBetaInfo")]
-    public static extern byte SteamAPI_ISteamApps_GetBetaInfo(ISteamApps* self, AppId_t unAppID, int iBetaIndex, [NativeTypeName("uint32 *")] uint* punFlags, [NativeTypeName("uint32 *")] uint* punBuildID, [NativeTypeName("char *")] sbyte* pchBetaName, int cchBetaName, [NativeTypeName("char *")] sbyte* pchDescription, int cchDescription);
+    public static extern byte SteamAPI_ISteamApps_GetBetaInfo(ISteamApps* self, int iBetaIndex, [NativeTypeName("uint32 *")] uint* punFlags, [NativeTypeName("uint32 *")] uint* punBuildID, [NativeTypeName("char *")] sbyte* pchBetaName, int cchBetaName, [NativeTypeName("char *")] sbyte* pchDescription, int cchDescription);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("bool")]
     [GenerateMemberFunction("SetActiveBeta")]
-    public static extern byte SteamAPI_ISteamApps_SetActiveBeta(ISteamApps* self, AppId_t unAppID, [NativeTypeName("const char *")] sbyte* pchBetaName);
+    public static extern byte SteamAPI_ISteamApps_SetActiveBeta(ISteamApps* self, [NativeTypeName("const char *")] sbyte* pchBetaName);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamNetworking* SteamAPI_SteamNetworking_v006();
@@ -3521,23 +3516,82 @@ public static unsafe partial class Steamworks
     public static extern byte SteamAPI_ISteamInventory_InspectItem(ISteamInventory* self, SteamInventoryResult_t* pResultHandle, [NativeTypeName("const char *")] sbyte* pchItemToken);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ISteamTimeline* SteamAPI_SteamTimeline_v001();
+    public static extern ISteamTimeline* SteamAPI_SteamTimeline_v004();
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("SetTimelineStateDescription")]
-    public static extern void SteamAPI_ISteamTimeline_SetTimelineStateDescription(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchDescription, float flTimeDelta);
+    [GenerateMemberFunction("SetTimelineTooltip")]
+    public static extern void SteamAPI_ISteamTimeline_SetTimelineTooltip(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchDescription, float flTimeDelta);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("ClearTimelineStateDescription")]
-    public static extern void SteamAPI_ISteamTimeline_ClearTimelineStateDescription(ISteamTimeline* self, float flTimeDelta);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("AddTimelineEvent")]
-    public static extern void SteamAPI_ISteamTimeline_AddTimelineEvent(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("uint32")] uint unPriority, float flStartOffsetSeconds, float flDurationSeconds, ETimelineEventClipPriority ePossibleClip);
+    [GenerateMemberFunction("ClearTimelineTooltip")]
+    public static extern void SteamAPI_ISteamTimeline_ClearTimelineTooltip(ISteamTimeline* self, float flTimeDelta);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("SetTimelineGameMode")]
     public static extern void SteamAPI_ISteamTimeline_SetTimelineGameMode(ISteamTimeline* self, ETimelineGameMode eMode);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("TimelineEventHandle_t")]
+    [GenerateMemberFunction("AddInstantaneousTimelineEvent")]
+    public static extern ulong SteamAPI_ISteamTimeline_AddInstantaneousTimelineEvent(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("uint32")] uint unIconPriority, float flStartOffsetSeconds, ETimelineEventClipPriority ePossibleClip);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("TimelineEventHandle_t")]
+    [GenerateMemberFunction("AddRangeTimelineEvent")]
+    public static extern ulong SteamAPI_ISteamTimeline_AddRangeTimelineEvent(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("uint32")] uint unIconPriority, float flStartOffsetSeconds, float flDuration, ETimelineEventClipPriority ePossibleClip);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: NativeTypeName("TimelineEventHandle_t")]
+    [GenerateMemberFunction("StartRangeTimelineEvent")]
+    public static extern ulong SteamAPI_ISteamTimeline_StartRangeTimelineEvent(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("uint32")] uint unPriority, float flStartOffsetSeconds, ETimelineEventClipPriority ePossibleClip);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("UpdateRangeTimelineEvent")]
+    public static extern void SteamAPI_ISteamTimeline_UpdateRangeTimelineEvent(ISteamTimeline* self, [NativeTypeName("TimelineEventHandle_t")] ulong ulEvent, [NativeTypeName("const char *")] sbyte* pchTitle, [NativeTypeName("const char *")] sbyte* pchDescription, [NativeTypeName("const char *")] sbyte* pchIcon, [NativeTypeName("uint32")] uint unPriority, ETimelineEventClipPriority ePossibleClip);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("EndRangeTimelineEvent")]
+    public static extern void SteamAPI_ISteamTimeline_EndRangeTimelineEvent(ISteamTimeline* self, [NativeTypeName("TimelineEventHandle_t")] ulong ulEvent, float flEndOffsetSeconds);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("RemoveTimelineEvent")]
+    public static extern void SteamAPI_ISteamTimeline_RemoveTimelineEvent(ISteamTimeline* self, [NativeTypeName("TimelineEventHandle_t")] ulong ulEvent);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("DoesEventRecordingExist")]
+    public static extern SteamAPICall_t SteamAPI_ISteamTimeline_DoesEventRecordingExist(ISteamTimeline* self, [NativeTypeName("TimelineEventHandle_t")] ulong ulEvent);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("StartGamePhase")]
+    public static extern void SteamAPI_ISteamTimeline_StartGamePhase(ISteamTimeline* self);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("EndGamePhase")]
+    public static extern void SteamAPI_ISteamTimeline_EndGamePhase(ISteamTimeline* self);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("SetGamePhaseID")]
+    public static extern void SteamAPI_ISteamTimeline_SetGamePhaseID(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchPhaseID);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("DoesGamePhaseRecordingExist")]
+    public static extern SteamAPICall_t SteamAPI_ISteamTimeline_DoesGamePhaseRecordingExist(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchPhaseID);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("AddGamePhaseTag")]
+    public static extern void SteamAPI_ISteamTimeline_AddGamePhaseTag(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchTagName, [NativeTypeName("const char *")] sbyte* pchTagIcon, [NativeTypeName("const char *")] sbyte* pchTagGroup, [NativeTypeName("uint32")] uint unPriority);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("SetGamePhaseAttribute")]
+    public static extern void SteamAPI_ISteamTimeline_SetGamePhaseAttribute(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchAttributeGroup, [NativeTypeName("const char *")] sbyte* pchAttributeValue, [NativeTypeName("uint32")] uint unPriority);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("OpenOverlayToGamePhase")]
+    public static extern void SteamAPI_ISteamTimeline_OpenOverlayToGamePhase(ISteamTimeline* self, [NativeTypeName("const char *")] sbyte* pchPhaseID);
+
+    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [GenerateMemberFunction("OpenOverlayToTimelineEvent")]
+    public static extern void SteamAPI_ISteamTimeline_OpenOverlayToTimelineEvent(ISteamTimeline* self, [NativeTypeName("const TimelineEventHandle_t")] ulong ulEvent);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ISteamVideo* SteamAPI_SteamVideo_v007();
@@ -4476,15 +4530,6 @@ public static unsafe partial class Steamworks
     [return: NativeTypeName("uint64")]
     [GenerateMemberFunction("GetPSNID")]
     public static extern ulong SteamAPI_SteamNetworkingIdentity_GetPSNID(SteamNetworkingIdentity* self);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [GenerateMemberFunction("SetStadiaID")]
-    public static extern void SteamAPI_SteamNetworkingIdentity_SetStadiaID(SteamNetworkingIdentity* self, [NativeTypeName("uint64")] ulong id);
-
-    [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [return: NativeTypeName("uint64")]
-    [GenerateMemberFunction("GetStadiaID")]
-    public static extern ulong SteamAPI_SteamNetworkingIdentity_GetStadiaID(SteamNetworkingIdentity* self);
 
     [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [GenerateMemberFunction("SetIPAddr")]

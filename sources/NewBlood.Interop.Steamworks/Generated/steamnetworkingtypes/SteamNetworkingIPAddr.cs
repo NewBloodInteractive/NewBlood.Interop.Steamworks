@@ -7,7 +7,7 @@ namespace NewBlood.Interop.Steamworks;
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SteamNetworkingIPAddr
 {
-    [NativeTypeName("SteamNetworkingIPAddr::(anonymous union at ../../sdk/public/steam/steamnetworkingtypes.h:238:2)")]
+    [NativeTypeName("SteamNetworkingIPAddr::(anonymous union at ../../sdk/public/steam/steamnetworkingtypes.h:234:2)")]
     public _Anonymous_e__Union Anonymous;
 
     [NativeTypeName("uint16")]
