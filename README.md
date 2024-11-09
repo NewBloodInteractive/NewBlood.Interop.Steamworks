@@ -2,7 +2,7 @@
 A modern, low-level Steamworks API binding for .NET
 
 # Setup
-1. Install the [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0).
+1. Install the latest [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet).
 2. Extract the contents of the `sdk` directory from the latest [Steamworks SDK](https://partner.steamgames.com/doc/sdk) into the repository's `sdk` directory.
 3. Extract the latest [Game Coordinator SDK](https://partner.steamgames.com/doc/features/multiplayer/steamdatagramrelay#7) into the repository's `sdk` directory.
 
